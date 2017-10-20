@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ServiceManager Example</string>
+    <string name="title_text">By turning your screen off you will receive notification</string>
+    <string name="notification">notification</string>
 </resources>
