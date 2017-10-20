@@ -14,7 +14,7 @@ import sm.euzee.github.com.servicemanager.ServiceManager;
 public class AlarmReceiver extends WakefulBroadcastReceiver {
 
     private static final long START_DELAY = 1000 * 5; //5 sec
-    private static final long RESTART_DELAY = 1000 * 5; //5 sec
+    private static final long RESTART_DELAY = 1000 * 25; //25 sec
     private static final long REPEAT_INTERVAL = 60 * 1000;// 1 minutes
     private static final int NOTIFICATION_ID = 1001;
 
