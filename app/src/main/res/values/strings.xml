@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ServiceManager Example</string>
-    <string name="title_text">By turning your screen off \n you will fill your phone heartbeat.\n Also you will receive notification with each beat</string>
-    <string name="notification">notification</string>
+    <string name="app_name">Voice test</string>
+    <string name="title_text">By turning your screen on \n system will try to recognize keyphrase "Hey friday".</string>
+    <string name="notification">Hey Friday detected !!</string>
 </resources>

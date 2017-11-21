@@ -12,10 +12,11 @@ import static example.sm.euzee.github.com.AlarmReceiver.stopAlarmManager;
 public class App extends android.app.Application {
 
 
+    private static App instance;
     private BroadcastReceiver screenOffReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
+            if (Intent.ACTION_SCREEN_ON.equals(intent.getAction())) {
                 startAlarmManager(context);
             } else {
                 stopAlarmManager(context);
@@ -23,10 +24,8 @@ public class App extends android.app.Application {
         }
     };
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        registerScreenReceiver();
+    public static App getInstance() {
+        return instance;
     }
 
     private void registerScreenReceiver() {
@@ -37,5 +36,14 @@ public class App extends android.app.Application {
         IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         return filter;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        if (instance == null) {
+            instance = this;
+        }
+        registerScreenReceiver();
     }
 }

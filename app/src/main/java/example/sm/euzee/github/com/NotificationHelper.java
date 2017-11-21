@@ -24,7 +24,9 @@ class NotificationHelper {
             channel.setLightColor(Color.RED);
             channel.enableVibration(true);
             channel.setVibrationPattern(new long[]{0, 100, 50, 100});
-            manager.createNotificationChannel(channel);
+            if (manager != null) {
+                manager.createNotificationChannel(channel);
+            }
             builder = new Notification.Builder(context, FRIDAY_CHANNEL_ID);
         } else {
             builder = new Notification.Builder(context).setVibrate(new long[]{0, 100, 50, 100});
